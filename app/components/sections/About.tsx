@@ -3,15 +3,23 @@ import Section from '../layout/Section';
 const About = () => {
   return (
     <Section id="about">
-      <h1 className="text-3xl font-bold mb-4">À propos de moi</h1>
-      <p>
-        Bonjour, je m&apos;appelle Khanison KHEEREESANTIKUL, développeur junior.
-        Après une licence en mathématiques, je me suis tourné vers le
-        développement web, attiré par la création de produits concrets. Mon
-        objectif est de concevoir des applications utiles et innovantes, qui
-        répondent à des besoins réels et simplifient le quotidien des
-        utilisateurs.
-      </p>
+      <h2 className="text-3xl font-bold mb-6">À propos</h2>
+      <div className="space-y-4">
+        <p>
+          Je m&apos;appelle <span title="Prénom">Khanison</span>{' '}
+          <span title="Nom de famille">Kheereesantikul</span> et je suis
+          développeur junior. Principalement orienté vers le développement web,
+          je reste ouvert à l&apos;exploration de différents types de projets.
+          Après une licence en mathématiques, je me suis tourné vers la
+          programmation pour mettre ma logique au service de la création
+          d&apos;applications concrètes.
+        </p>
+        <p>
+          Je possède des bases solides en frontend avec React, Next.js et
+          Angular ainsi qu&apos;en backend avec Spring Boot et la conception
+          d&apos;API REST.
+        </p>
+      </div>
     </Section>
   );
 };

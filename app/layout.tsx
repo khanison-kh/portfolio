@@ -25,7 +25,9 @@ export default function RootLayout({
         className={`${inter.variable} antialiased grid min-h-dvh grid-rows-[auto_1fr_auto] bg-[#f7f9fc]`}
       >
         <Navbar />
-        <main className="flex flex-col">{children}</main>
+        <main className="flex flex-col text-lg leading-relaxed">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
