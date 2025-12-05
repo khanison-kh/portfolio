@@ -8,26 +8,29 @@ import LinkComponent from '../ui/LinkComponent';
 const Home = () => {
   return (
     <Section id="home" variant="home" className="flex flex-col ">
-      <div className="flex py-16">
+      <div
+        className="max-w-6xl lg:flex-row
+       flex flex-col items-center justify-between gap-12 lg:gap-16 mx-auto"
+      >
         {/* Intro */}
-        <div className="max-w-3xl space-y-10">
+        <div className="max-w-4xl text-center space-y-5 md:space-y-10">
           <h1 className="text-4xl/relaxed font-medium">
             <span className="block">Bonjour ! Je suis </span>
             <TextAudio
-              text="KHEEREESANTIKUL Khanison"
+              text="KHEEREESANTIKUL Khanison,"
               audioFile="name.m4a"
-              buttonClasses="cursor-pointer group"
-              spanClasses="text-5xl font-bold bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent transition-all duration-200 hover:scale-105 inline-block"
-            />
-            <span>,</span>
-            <span className="block">développeur junior.</span>
+              classNames="text-5xl/tight leading font-bold bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent transition-all duration-200 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-blue-600"
+            ></TextAudio>
+            <span className="block">développeur full stack junior.</span>
           </h1>
+
           <p className="text-xl">
             Mon objectif est de créer des applications utiles et concrètes,
             capables d&apos;apporter une réelle valeur aux utilisateurs. Je
             cherche à progresser en construisant des solutions simples,
             efficaces et bien structurées.
           </p>
+
           <div className="space-x-5">
             <LinkComponent
               href="https://www.linkedin.com/in/khanisonkh/"
@@ -49,13 +52,22 @@ const Home = () => {
             </LinkComponent>
           </div>
         </div>
+
         {/* Profile Image */}
+        {/* <Image
+          src="/images/profile.webp"
+          alt="Photo de profil"
+          width={200}
+          height={200}
+          className="h-72 w-72 rounded-full object-cover object-center flex-none"
+        /> */}
         <Image
           src="/images/profile.webp"
           alt="Photo de profil"
           width={300}
           height={300}
-          className="rounded-full"
+          sizes="(max-width: 640px) 12rem, (max-width: 1024px) 14rem, (max-width: 1280px) 15rem, 18rem"
+          className="size-56 lg:size-60 xl:size-72 max-w-full rounded-full object-cover object-center"
         />
       </div>
 

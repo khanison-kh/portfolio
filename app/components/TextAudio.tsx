@@ -5,17 +5,11 @@ import { useEffect, useRef } from 'react';
 export type TextAudioProps = {
   text: string;
   audioFile: string;
-  buttonClasses?: string;
-  spanClasses?: string;
+  classNames?: string;
 };
 
 // Text that plays sound when clicked
-const TextAudio = ({
-  text,
-  audioFile,
-  buttonClasses,
-  spanClasses,
-}: TextAudioProps) => {
+const TextAudio = ({ text, audioFile, classNames }: TextAudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -38,14 +32,14 @@ const TextAudio = ({
   };
 
   return (
-    <button
+    <span
       onClick={handlePlay}
-      className={buttonClasses}
-      type="button"
+      className={`cursor-pointer ${classNames ?? ''}`}
       aria-label={`Play pronunciation: ${text}`}
+      role="button"
     >
-      <span className={spanClasses}>{text}</span>
-    </button>
+      {text}
+    </span>
   );
 };
 
