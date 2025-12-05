@@ -1,7 +1,10 @@
+import Section from '../layout/Section';
+
 const About = () => {
   return (
-    <>
-      <section id="about">
+    <Section id="about">
+      <div>
+        <h1 className="text-3xl font-bold mb-4">À propos de moi</h1>
         <p>
           Bonjour, je m&apos;appelle Khanison KHEEREESANTIKUL, développeur
           junior. Après une licence en mathématiques, je me suis tourné vers le
@@ -10,8 +13,8 @@ const About = () => {
           répondent à des besoins réels et simplifient le quotidien des
           utilisateurs.
         </p>
-      </section>
-    </>
+      </div>
+    </Section>
   );
 };
 

@@ -20,14 +20,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" className="scroll-smooth">
       <body
         className={`${inter.variable} antialiased grid min-h-dvh grid-rows-[auto_1fr_auto] bg-[#f7f9fc]`}
       >
         <Navbar />
-        <main className="w-full max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 overflow-x-hidden">
-          {children}
-        </main>
+        <main className="flex flex-col">{children}</main>
         <Footer />
       </body>
     </html>

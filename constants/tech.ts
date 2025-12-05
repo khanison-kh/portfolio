@@ -1,4 +1,4 @@
-export const TechEnum = {
+export const TECH = {
   Angular: 'Angular',
   SpringBoot: 'Spring Boot',
   NextJs: 'Next.js',
@@ -15,4 +15,4 @@ export const TechEnum = {
   CSS: 'CSS',
 } as const;
 
-export type Tech = (typeof TechEnum)[keyof typeof TechEnum] | string;
+export type TechType = (typeof TECH)[keyof typeof TECH] | string;

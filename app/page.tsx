@@ -1,21 +1,21 @@
-import { TechEnum } from '@/constants/TechEnum';
-import About from './components/About';
-import Contact from './components/Contact';
-import Education from './components/Education';
-import ProjectList from './components/projects/ProjectList';
-import Skills from './components/Skills';
-import TechStack from './components/ui/TechStackChip';
+import About from './components/sections/About';
+import Contact from './components/sections/Contact';
+import Education from './components/sections/Education';
+import Experience from './components/sections/Experience';
+import Home from './components/sections/Home';
+import Projects from './components/sections/Projects';
+import Skills from './components/sections/Skills';
 
 const App = () => {
   return (
     <>
-      <h1>Bienvenue sur mon Portfolio</h1>
+      <Home />
       <About />
-      <ProjectList />
+      <Projects />
       <Skills />
+      <Experience />
       <Education />
       <Contact />
-      <TechStack techStack={[TechEnum.Angular, TechEnum.SpringBoot]} />
     </>
   );
 };

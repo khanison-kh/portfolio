@@ -1,12 +1,12 @@
-import { Tech } from '@/constants/TechEnum';
+import { TechType } from '@/constants/tech';
 
 type TechStackProps = {
-  techStack: Tech[];
+  techStack: TechType[];
 };
 
 const TechStackChip = ({ techStack }: TechStackProps) => {
   return (
-    <div className="space-x-2">
+    <div className="flex flex-wrap gap-2">
       {techStack.map((tech, i) => {
         return (
           <span

@@ -11,11 +11,7 @@ type ImageSliderProps = {
   className?: string;
 };
 
-const ImageSlider = ({
-  images,
-  alt = 'Project image',
-  className,
-}: ImageSliderProps) => {
+const ImageSlider = ({ images, alt, className }: ImageSliderProps) => {
   const safeImages = useMemo(() => images.filter(Boolean), [images]);
   const [index, setIndex] = useState(0);
   const imageCount = safeImages.length;
