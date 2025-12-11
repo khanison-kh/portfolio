@@ -1,76 +1,84 @@
-import { TechType } from '@/constants/tech';
-import { truncateText } from '@/utils/string';
-import { ExternalLink } from 'lucide-react';
-import Image from 'next/image';
-import { SiGithub } from 'react-icons/si';
-import LinkComponent from '../ui/LinkComponent';
-import TechStackChip from '../ui/TechStackChip';
-import ProjectDetailsButton from './../ui/ProjectDetailsButton';
+"use client";
+
+import { TechType } from "@/constants/tech";
+import { ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { SiGithub } from "react-icons/si";
+import LinkComponent from "../ui/LinkComponent";
+import TechStackChip from "../ui/TechStackChip";
 
 export type ProjectProps = {
   id: string;
   name: string;
   description?: string[];
   techStack?: TechType[];
-  imageList?: string[] | null;
+  imageList?: string[];
   gitHubLink?: string;
   projectLink?: string;
+  onClick?: () => void;
 };
 
 const ProjectCard = ({
   name,
-  description,
-  techStack,
-  imageList,
-  gitHubLink,
-  projectLink,
+  description = [],
+  techStack = [],
+  imageList = [],
+  gitHubLink = "",
+  projectLink = "",
+  onClick,
 }: ProjectProps) => {
-  const truncated = truncateText(description?.[0] || '', 160);
-  const hasTechStack = techStack && techStack.length > 0;
-  const hasImages = imageList && imageList.length > 0;
-  const hasGitHubLink = gitHubLink && gitHubLink.length > 0;
-  const hasProjectLink = projectLink && projectLink.length > 0;
+  const primaryDescription = description[0] ?? "";
+  const hasTechStack = techStack.length > 0;
+  const hasImages = imageList.length > 0;
+  const hasGitHubLink = gitHubLink.trim().length > 0;
+  const hasProjectLink = projectLink.trim().length > 0;
 
   return (
     // Card container
-    <div
-      className="group relative flex flex-col border border-neutral-300 bg-white
-     rounded-xl shadow-md hover:shadow-2xl hover:border-blue-500/40 transition duration-300 overflow-hidden max-w-md"
+    <article
+      className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-neutral-300 bg-white shadow-md transition duration-300 hover:cursor-pointer hover:shadow-xl md:flex-row"
+      onClick={onClick}
     >
-      {/* // Image container */}
-      <div className="relative h-40 w-full overflow-hidden bg-linear-to-br from-blue-600/40 to-indigo-600/40">
+      {/* Image container */}
+      <div className="relative h-48 w-full shrink-0 overflow-hidden md:h-auto md:w-96">
         {hasImages ? (
-          <Image
-            src={imageList[0]}
-            alt={name}
-            fill
-            sizes="(max-width: 768px) 100vw, 400px"
-            className="object-cover object-center group-hover:scale-105 transition duration-400"
-            priority
-          />
+          <>
+            <Image
+              src={imageList[0]}
+              alt={name}
+              fill
+              sizes="(max-width: 768px) 100vw, 256px"
+              className="object-cover"
+              loading="lazy"
+            />
+          </>
         ) : (
-          <div className="flex h-full w-full items-center justify-center text-sm font-medium text-white/70 backdrop-blur-sm">
+          <div className="flex h-full items-center justify-center bg-linear-to-br from-blue-500 to-indigo-600 text-sm font-medium text-white">
             Aucune image
           </div>
         )}
-        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-40 transition" />
       </div>
 
-      <div className="flex flex-col gap-3 p-5">
-        <h3 className="text-xl font-semibold tracking-tight group-hover:text-blue-500 transition">
-          {name}
-        </h3>
-        <p className="text-sm text-white/80 leading-relaxed">{truncated}</p>
+      {/* Content */}
+      <div className="flex grow flex-col gap-4 p-5">
+        <div className="space-y-2">
+          <h3 className="text-xl font-semibold transition group-hover:text-blue-600">
+            {name}
+          </h3>
+          <p className="line-clamp-3 text-sm leading-relaxed">
+            {primaryDescription}
+          </p>
+        </div>
 
-        {hasTechStack && <TechStackChip techStack={techStack} />}
-
-        <div className="mt-2 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+        <div className="mt-auto flex flex-col gap-3">
+          {hasTechStack && <TechStackChip techStack={techStack} />}
+          <div className="flex flex-wrap gap-2">
             {hasGitHubLink && (
               <LinkComponent
                 href={gitHubLink}
-                icon={<SiGithub size={20} />}
+                icon={<SiGithub size={18} />}
                 variant="small"
+                className=""
               >
                 GitHub
               </LinkComponent>
@@ -78,17 +86,20 @@ const ProjectCard = ({
             {hasProjectLink && (
               <LinkComponent
                 href={projectLink}
-                icon={<ExternalLink size={20} />}
+                icon={<ExternalLink size={18} />}
                 variant="small"
+                className=""
               >
-                Project
+                Visiter le projet
               </LinkComponent>
             )}
           </div>
-          <ProjectDetailsButton />
+          {/* <div className="flex justify-end">
+            <ProjectDetailsButton />
+          </div> */}
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

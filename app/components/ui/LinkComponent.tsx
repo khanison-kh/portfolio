@@ -1,11 +1,11 @@
 // components/ExternalLinkButton.tsx
-import Link from 'next/link';
-import { ReactNode } from 'react';
+import Link from "next/link";
+import { ReactNode } from "react";
 
 type LinkComponentProps = {
   href: string;
   icon?: ReactNode;
-  variant?: 'default' | 'small';
+  variant?: "default" | "small";
   children?: ReactNode;
   className?: string;
 };
@@ -13,15 +13,15 @@ type LinkComponentProps = {
 const LinkComponent = ({
   href,
   icon,
-  variant = 'default',
+  variant = "default",
   children,
   className,
 }: LinkComponentProps) => {
   const baseClasses =
-    'inline-flex items-center gap-2 bg-slate-200 border border-slate-300 px-2 py-1 rounded-full hover:bg-slate-300 shadow-sm transition duration-200' +
-    (variant === 'small' ? ' text-xs' : ' font-medium');
+    "inline-flex items-center gap-2 bg-slate-200 border border-slate-300 px-3 py-1 rounded-full hover:bg-slate-300 shadow-sm transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500" +
+    (variant === "small" ? " text-xs" : " font-medium");
 
-  const isSpecialProtocol = href.startsWith('mailto:');
+  const isSpecialProtocol = href.startsWith("mailto:");
 
   if (isSpecialProtocol) {
     return (

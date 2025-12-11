@@ -1,19 +1,15 @@
-import { ChevronsDown, Mail } from 'lucide-react';
-import Image from 'next/image';
-import { SiGithub, SiLinkedin } from 'react-icons/si';
-import Section from '../layout/Section';
-import TextAudio from '../TextAudio';
-import LinkComponent from '../ui/LinkComponent';
+import { ChevronsDown, Mail } from "lucide-react";
+import Image from "next/image";
+import { SiGithub, SiLinkedin } from "react-icons/si";
+import TextAudio from "../TextAudio";
+import LinkComponent from "../ui/LinkComponent";
 
 const Home = () => {
   return (
-    <Section id="home" variant="home" className="flex flex-col ">
-      <div
-        className="max-w-6xl lg:flex-row
-       flex flex-col items-center justify-between gap-12 lg:gap-16 mx-auto"
-      >
+    <>
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-12 lg:flex-row lg:gap-16">
         {/* Intro */}
-        <div className="max-w-4xl text-center space-y-5 md:space-y-10">
+        <div className="max-w-4xl space-y-5 text-center md:space-y-10">
           <h1 className="text-4xl/relaxed font-medium">
             <span className="block">Bonjour ! Je suis </span>
             <TextAudio
@@ -54,20 +50,13 @@ const Home = () => {
         </div>
 
         {/* Profile Image */}
-        {/* <Image
-          src="/images/profile.webp"
-          alt="Photo de profil"
-          width={200}
-          height={200}
-          className="h-72 w-72 rounded-full object-cover object-center flex-none"
-        /> */}
         <Image
           src="/images/profile.webp"
           alt="Photo de profil"
           width={300}
           height={300}
           sizes="(max-width: 640px) 12rem, (max-width: 1024px) 14rem, (max-width: 1280px) 15rem, 18rem"
-          className="size-56 lg:size-60 xl:size-72 max-w-full rounded-full object-cover object-center"
+          className="size-56 max-w-full rounded-full object-cover object-center lg:size-60 xl:size-72"
         />
       </div>
 
@@ -75,7 +64,7 @@ const Home = () => {
       <div className="mt-auto flex justify-center pb-4">
         <a
           href="#about"
-          className="flex flex-col items-center gap-2 hover:text-blue-600 transition-colors cursor-pointer group"
+          className="group flex cursor-pointer flex-col items-center gap-2 transition-colors hover:text-blue-600"
           aria-label="Scroll to About section"
         >
           <span className="text-md">Explorer</span>
@@ -85,7 +74,7 @@ const Home = () => {
           />
         </a>
       </div>
-    </Section>
+    </>
   );
 };
 

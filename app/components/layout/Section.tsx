@@ -1,28 +1,32 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 export type SectionProps = {
   id?: string;
   children: ReactNode;
-  variant?: 'home' | 'default';
+  layout?: "home" | "default";
   className?: string;
 };
 
 const Section = ({
   id,
   children,
-  variant = 'default',
+  layout = "default",
   className,
 }: SectionProps) => {
-  const variants: Record<'home' | 'default', string> = {
-    home: 'px-8 sm:px-12 md:px-18 lg:px-22 pt-32 min-h-dvh scroll-mt-22', // moderate lateral padding with anchor offset for fixed navbar
-    default: 'px-8 sm:px-12 md:px-18 lg:px-24 xl:px-32 py-12 scroll-mt-22', // large lateral padding with anchor offset for fixed navbar
+  const baseLayout: string = "px-6 scroll-mt-22 flex flex-col";
+
+  const layouts: Record<"home" | "default", string> = {
+    home: `${baseLayout} pt-32 min-h-dvh `, // moderate lateral padding with anchor offset for fixed navbar
+    default: `${baseLayout} py-12`, // large lateral padding with anchor offset for fixed navbar
   };
 
   return (
-    <section id={id} className={`${variants[variant]} ${className}`.trim()}>
-      {variant === 'home' && children}
-      {variant === 'default' && (
-        <div className="max-w-prose flex flex-col mx-auto">{children}</div>
+    <section id={id} className={`${layouts[layout]} ${className ?? ""}`.trim()}>
+      {layout === "home" && children}
+      {layout === "default" && (
+        <div className="mx-auto flex max-w-4xl flex-col items-center">
+          {children}
+        </div>
       )}
     </section>
   );

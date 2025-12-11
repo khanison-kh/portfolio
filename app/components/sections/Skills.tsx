@@ -1,11 +1,9 @@
-import Section from '../layout/Section';
-
 const Skills = () => {
   return (
-    <Section id="skills">
-      <h2 className="text-3xl font-bold mb-4">Compétences</h2>
+    <>
+      <h2 className="mb-4 text-3xl font-bold">Compétences</h2>
       <p>Skills content coming soon...</p>
-    </Section>
+    </>
   );
 };
 

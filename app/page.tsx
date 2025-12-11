@@ -1,21 +1,16 @@
-import About from './components/sections/About';
-import Contact from './components/sections/Contact';
-import Education from './components/sections/Education';
-import Experience from './components/sections/Experience';
-import Home from './components/sections/Home';
-import Projects from './components/sections/Projects';
-import Skills from './components/sections/Skills';
+import Section from "./components/layout/Section";
+import { sections } from "./data/sections";
 
 const App = () => {
   return (
     <>
-      <Home />
-      <About />
-      <Projects />
-      <Skills />
-      <Experience />
-      <Education />
-      <Contact />
+      {sections.map((s) => {
+        return (
+          <Section key={s.id} {...s}>
+            <s.Component />
+          </Section>
+        );
+      })}
     </>
   );
 };

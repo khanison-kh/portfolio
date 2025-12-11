@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="p-4 text-center border-t border-gray-400">
+    <footer className="border-t border-neutral-300 p-4 text-center">
       © {new Date().getFullYear()} Khanifolio.
     </footer>
   );

@@ -1,12 +1,10 @@
-import Section from '../layout/Section';
-
 const About = () => {
   return (
-    <Section id="about">
-      <h2 className="text-3xl font-bold mb-6">À propos</h2>
+    <>
+      <h2 className="mb-6 text-3xl font-bold">À propos</h2>
       <div className="space-y-4">
         <p>
-          Je m&apos;appelle <span title="Prénom">Khanison</span>{' '}
+          Je m&apos;appelle <span title="Prénom">Khanison</span>{" "}
           <span title="Nom de famille">Kheereesantikul</span> et je suis
           développeur junior. Principalement orienté vers le développement web,
           je reste ouvert à l&apos;exploration de différents types de projets.
@@ -20,7 +18,7 @@ const About = () => {
           d&apos;API REST.
         </p>
       </div>
-    </Section>
+    </>
   );
 };
 
