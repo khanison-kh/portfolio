@@ -1,5 +1,5 @@
-import { TECH } from "@/constants/tech";
 import { ProjectProps } from "../components/projects/ProjectCard";
+import { TECH } from "./tech";
 
 export const projectsData: ProjectProps[] = [
   {
@@ -23,11 +23,7 @@ export const projectsData: ProjectProps[] = [
       "Développment de mon portfolio personnel en utilisant Next.js et Tailwind CSS.",
     ],
     techStack: [TECH.NextJs, TECH.Tailwind, TECH.React, TECH.TypeScript],
-    imageList: [
-      "/images/projects/project1-1.jpg",
-      "/images/projects/project1-2.jpg",
-      "/images/projects/project1-3.jpg",
-    ],
+    imageList: [],
     gitHubLink: "https://github.com/khanison-kh/portfolio",
     projectLink:
       "https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal",

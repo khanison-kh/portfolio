@@ -1,10 +1,10 @@
-import About from "../components/sections/About";
-import Contact from "../components/sections/Contact";
-import Education from "../components/sections/Education";
-import Experience from "../components/sections/Experience";
-import Home from "../components/sections/Home";
-import Projects from "../components/sections/Projects";
-import Skills from "../components/sections/Skills";
+import About from "../components/sections-content/About";
+import Contact from "../components/sections-content/Contact";
+import Education from "../components/sections-content/Education";
+import Experience from "../components/sections-content/Experience";
+import Home from "../components/sections-content/Home";
+import Projects from "../components/sections-content/Projects";
+import Skills from "../components/sections-content/Skills";
 
 export const sections: {
   id: string;

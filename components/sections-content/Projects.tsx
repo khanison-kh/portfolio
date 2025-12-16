@@ -1,6 +1,6 @@
 "use client";
 
-import { projectsData } from "@/app/data/projects";
+import { projectsData } from "@/data/projects";
 import { useState } from "react";
 import ProjectCard, { ProjectProps } from "../projects/ProjectCard";
 import ProjectDetails from "../projects/ProjectDetails";

@@ -1,4 +1,4 @@
-import { TechType } from '@/constants/tech';
+import { TechType } from "@/data/tech";
 
 type TechStackProps = {
   techStack: TechType[];

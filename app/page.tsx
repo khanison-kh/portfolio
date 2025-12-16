@@ -1,5 +1,5 @@
-import Section from "./components/layout/Section";
-import { sections } from "./data/sections";
+import Section from "../components/layout/Section";
+import { sections } from "../data/sections";
 
 const App = () => {
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import { TechType } from "@/constants/tech";
+import { TechType } from "@/data/tech";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { SiGithub } from "react-icons/si";
