@@ -1,15 +1,16 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
+import { cn } from "@/lib/utils";
+import { useEffect, useRef } from "react";
 
 export type TextAudioProps = {
   text: string;
   audioFile: string;
-  classNames?: string;
+  className?: string;
 };
 
 // Text that plays sound when clicked
-const TextAudio = ({ text, audioFile, classNames }: TextAudioProps) => {
+const TextAudio = ({ text, audioFile, className }: TextAudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const TextAudio = ({ text, audioFile, classNames }: TextAudioProps) => {
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
-        audioRef.current.src = '';
+        audioRef.current.src = "";
         audioRef.current = null;
       }
     };
@@ -34,7 +35,7 @@ const TextAudio = ({ text, audioFile, classNames }: TextAudioProps) => {
   return (
     <span
       onClick={handlePlay}
-      className={`cursor-pointer ${classNames ?? ''}`}
+      className={cn("cursor-pointer", className)}
       aria-label={`Play pronunciation: ${text}`}
       role="button"
     >

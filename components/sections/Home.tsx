@@ -1,8 +1,8 @@
 import { ChevronsDown, Mail } from "lucide-react";
 import Image from "next/image";
 import { SiGithub, SiLinkedin } from "react-icons/si";
-import TextAudio from "../TextAudio";
 import LinkComponent from "../ui/LinkComponent";
+import TextAudio from "../ui/TextAudio";
 
 const Home = () => {
   return (
@@ -15,7 +15,7 @@ const Home = () => {
             <TextAudio
               text="KHEEREESANTIKUL Khanison,"
               audioFile="name.m4a"
-              classNames="text-5xl/tight leading font-bold bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent transition-all duration-200 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-blue-600"
+              className="leading bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-5xl/tight font-bold text-transparent transition-all duration-200 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-blue-600"
             ></TextAudio>
             <span className="block">développeur full stack junior.</span>
           </h1>

@@ -1,59 +1,55 @@
 "use client";
 
-import { ExternalLink, X } from "lucide-react";
-import { useEffect } from "react";
-import { SiGithub } from "react-icons/si";
+import type { Project } from "@/data/projects";
+import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
+import { useEscapeKey } from "@/hooks/useEscapeKey";
+import { cn } from "@/lib/utils";
+import { X } from "lucide-react";
 import ImageSlider from "../ui/ImageSlider";
-import LinkComponent from "../ui/LinkComponent";
-import TechStackChip from "../ui/TechStackChip";
-import { ProjectProps } from "./ProjectCard";
+import ProjectLinks from "../ui/ProjectLinks";
+import { TechBadgeList } from "../ui/TechBadge";
 
 type ProjectDetailsProps = {
-  project: ProjectProps;
+  project: Project;
   onClose: () => void;
 };
 
 const ProjectDetails = ({ project, onClose }: ProjectDetailsProps) => {
-  const {
-    name,
-    description = [],
-    techStack = [],
-    imageList = [],
-    gitHubLink = "",
-    projectLink = "",
-  } = project;
+  const { name, description, techStack, images, githubUrl, projectUrl } =
+    project;
 
+  const hasImages = images.length > 0;
+  const hasDescription = description.length > 0;
   const hasTechStack = techStack.length > 0;
-  const hasImages = imageList.length > 0;
-  const hasGitHubLink = gitHubLink.trim().length > 0;
-  const hasProjectLink = projectLink.trim().length > 0;
+  const hasLinks = Boolean(githubUrl) || Boolean(projectUrl);
 
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", handleEscape);
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.removeEventListener("keydown", handleEscape);
-      document.body.style.overflow = "unset";
-    };
-  }, [onClose]);
+  // Modal lifecycle hooks
+  useBodyScrollLock(true);
+  useEscapeKey(onClose);
 
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="project-title"
     >
       <div
-        className="relative max-h-full w-full max-w-5xl overflow-y-auto rounded-xl bg-white shadow-2xl"
+        className={cn(
+          "relative max-h-full w-full max-w-5xl overflow-y-auto rounded-xl bg-white shadow-2xl",
+        )}
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Close button */}
         <button
           type="button"
           onClick={onClose}
-          className="group absolute top-4 right-4 z-10 cursor-pointer rounded-full bg-white/80 p-2 shadow-lg transition hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-blue-500"
+          className={cn(
+            "group absolute top-4 right-4 z-10 cursor-pointer rounded-full",
+            "bg-white/80 p-2 shadow-lg transition hover:bg-gray-100",
+            "focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none",
+          )}
           aria-label="Close modal"
         >
           <X
@@ -62,20 +58,25 @@ const ProjectDetails = ({ project, onClose }: ProjectDetailsProps) => {
           />
         </button>
 
+        {/* Image slider */}
         {hasImages && (
           <div className="relative w-full bg-neutral-900">
-            <ImageSlider images={imageList} alt={name} />
+            <ImageSlider images={images} alt={name} />
           </div>
         )}
 
+        {/* Content */}
         <div className="space-y-6 p-8">
-          <h2 className="text-3xl font-bold text-gray-900">{name}</h2>
+          <h2 id="project-title" className="text-3xl font-bold text-gray-900">
+            {name}
+          </h2>
 
-          {description.length > 0 && (
+          {/* Description */}
+          {hasDescription && (
             <div className="space-y-3">
               {description.map((paragraph, index) => (
                 <p
-                  key={index}
+                  key={`${project.id}-desc-${index}`}
                   className="text-base leading-relaxed text-gray-700"
                 >
                   {paragraph}
@@ -84,40 +85,23 @@ const ProjectDetails = ({ project, onClose }: ProjectDetailsProps) => {
             </div>
           )}
 
+          {/* Tech stack */}
           {hasTechStack && (
             <div>
               <h3 className="mb-3 text-lg font-semibold text-gray-900">
                 Technologies utilisées
               </h3>
-              <TechStackChip techStack={techStack} />
+              <TechBadgeList techStack={techStack} />
             </div>
           )}
 
-          {(hasGitHubLink || hasProjectLink) && (
-            <div className="">
+          {/* Links */}
+          {hasLinks && (
+            <div>
               <h3 className="mb-3 text-lg font-semibold text-gray-900">
                 Liens
               </h3>
-              <div className="flex flex-wrap gap-3">
-                {hasGitHubLink && (
-                  <LinkComponent
-                    href={gitHubLink}
-                    icon={<SiGithub size={20} />}
-                    variant="default"
-                  >
-                    GitHub
-                  </LinkComponent>
-                )}
-                {hasProjectLink && (
-                  <LinkComponent
-                    href={projectLink}
-                    icon={<ExternalLink size={20} />}
-                    variant="default"
-                  >
-                    Visiter le projet
-                  </LinkComponent>
-                )}
-              </div>
+              <ProjectLinks githubUrl={githubUrl} projectUrl={projectUrl} />
             </div>
           )}
         </div>

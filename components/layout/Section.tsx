@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
 export type SectionProps = {
@@ -13,15 +14,16 @@ const Section = ({
   layout = "default",
   className,
 }: SectionProps) => {
-  const baseLayout: string = "px-6 scroll-mt-22 flex flex-col";
-
-  const layouts: Record<"home" | "default", string> = {
-    home: `${baseLayout} pt-32 min-h-dvh `, // moderate lateral padding with anchor offset for fixed navbar
-    default: `${baseLayout} py-12`, // large lateral padding with anchor offset for fixed navbar
-  };
-
   return (
-    <section id={id} className={`${layouts[layout]} ${className ?? ""}`.trim()}>
+    <section
+      id={id}
+      className={cn(
+        "flex scroll-mt-22 flex-col px-6",
+        layout === "home" && "min-h-dvh pt-48",
+        layout === "default" && "py-12",
+        className,
+      )}
+    >
       {layout === "home" && children}
       {layout === "default" && (
         <div className="mx-auto flex max-w-4xl flex-col items-center">

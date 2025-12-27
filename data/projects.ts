@@ -1,7 +1,16 @@
-import { ProjectProps } from "../components/projects/ProjectCard";
-import { TECH } from "./tech";
+import { TECH, TechType } from "./tech";
 
-export const projectsData: ProjectProps[] = [
+export type Project = {
+  id: string;
+  name: string;
+  description: string[];
+  techStack: TechType[];
+  images: string[];
+  githubUrl: string;
+  projectUrl: string;
+};
+
+export const projectsData: Project[] = [
   {
     id: "erp-portal",
     name: "Portail administratif (ERP)",
@@ -9,12 +18,13 @@ export const projectsData: ProjectProps[] = [
       "Application web permettant la centralisation des services administratifs de l'IUT. Projet d'envergure impliquant une vingtaine de personnes organisées en plusieurs sous-groupes de 3 à 5 personnes.",
     ],
     techStack: [TECH.Angular, TECH.SpringBoot, TECH.MySQL],
-    imageList: [
+    images: [
       "/images/projects/erp1.png",
       "/images/projects/erp2.png",
       "/images/projects/erp3.png",
     ],
-    gitHubLink: "",
+    githubUrl: "",
+    projectUrl: "",
   },
   {
     id: "portfolio",
@@ -23,9 +33,9 @@ export const projectsData: ProjectProps[] = [
       "Développment de mon portfolio personnel en utilisant Next.js et Tailwind CSS.",
     ],
     techStack: [TECH.NextJs, TECH.Tailwind, TECH.React, TECH.TypeScript],
-    imageList: [],
-    gitHubLink: "https://github.com/khanison-kh/portfolio",
-    projectLink:
+    images: [],
+    githubUrl: "https://github.com/khanison-kh/portfolio",
+    projectUrl:
       "https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal",
   },
   {
@@ -35,13 +45,14 @@ export const projectsData: ProjectProps[] = [
       "Application web de suivi d'alertes avec dashboard incluant un graphique interactif",
     ],
     techStack: [TECH.NextJs, TECH.Express, TECH.TypeScript, TECH.Auth0],
-    imageList: [
+    images: [
       "/images/projects/dashboard1.png",
       "/images/projects/dashboard2.png",
       "/images/projects/dashboard3.png",
       "/images/projects/dashboard4.png",
       "/images/projects/dashboard5.png",
     ],
-    gitHubLink: "https://github.com/khanison-kh/nextjs-alert-dashboard",
+    githubUrl: "https://github.com/khanison-kh/nextjs-alert-dashboard",
+    projectUrl: "",
   },
 ];

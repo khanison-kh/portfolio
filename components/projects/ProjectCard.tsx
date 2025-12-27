@@ -1,62 +1,53 @@
 "use client";
 
-import { TechType } from "@/data/tech";
-import { ExternalLink } from "lucide-react";
-import Image from "next/image";
-import { SiGithub } from "react-icons/si";
-import LinkComponent from "../ui/LinkComponent";
-import TechStackChip from "../ui/TechStackChip";
+import type { Project } from "@/data/projects";
+import { cn } from "@/lib/utils";
+import { KeyboardEvent } from "react";
+import ProjectImage from "../ui/ProjectImage";
+import ProjectLinks from "../ui/ProjectLinks";
+import { TechBadgeList } from "../ui/TechBadge";
 
-export type ProjectProps = {
-  id: string;
-  name: string;
-  description?: string[];
-  techStack?: TechType[];
-  imageList?: string[];
-  gitHubLink?: string;
-  projectLink?: string;
-  onClick?: () => void;
+type ProjectCardProps = {
+  project: Project;
+  onOpen: () => void;
 };
 
-const ProjectCard = ({
-  name,
-  description = [],
-  techStack = [],
-  imageList = [],
-  gitHubLink = "",
-  projectLink = "",
-  onClick,
-}: ProjectProps) => {
+const ProjectCard = ({ project, onOpen }: ProjectCardProps) => {
+  const { name, description, techStack, images, githubUrl, projectUrl } =
+    project;
+
   const primaryDescription = description[0] ?? "";
+  const hasImages = images.length > 0;
   const hasTechStack = techStack.length > 0;
-  const hasImages = imageList.length > 0;
-  const hasGitHubLink = gitHubLink.trim().length > 0;
-  const hasProjectLink = projectLink.trim().length > 0;
+  const hasLinks = Boolean(githubUrl) || Boolean(projectUrl);
+
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      onOpen();
+    }
+  };
 
   return (
-    // Card container
     <article
-      className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-neutral-300 bg-white shadow-md transition duration-300 hover:cursor-pointer hover:shadow-xl md:flex-row"
-      onClick={onClick}
+      role="button"
+      tabIndex={0}
+      aria-haspopup="dialog"
+      aria-label={`Ouvrir les détails du projet ${name}`}
+      aria-expanded={false}
+      onClick={onOpen}
+      onKeyDown={handleKeyDown}
+      className={cn(
+        "group relative flex h-full flex-col overflow-hidden rounded-xl",
+        "border border-neutral-300 bg-white shadow-md",
+        "transition duration-300 hover:cursor-pointer hover:shadow-xl",
+        "focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none",
+        "md:flex-row",
+      )}
     >
-      {/* Image container */}
+      {/* Image */}
       <div className="relative h-48 w-full shrink-0 overflow-hidden md:h-auto md:w-96">
-        {hasImages ? (
-          <>
-            <Image
-              src={imageList[0]}
-              alt={name}
-              fill
-              sizes="(max-width: 768px) 100vw, 256px"
-              className="object-cover"
-              loading="lazy"
-            />
-          </>
-        ) : (
-          <div className="flex h-full items-center justify-center bg-linear-to-br from-blue-500 to-indigo-600 text-sm font-medium text-white">
-            Aucune image
-          </div>
-        )}
+        <ProjectImage src={hasImages ? images[0] : undefined} alt={name} />
       </div>
 
       {/* Content */}
@@ -71,32 +62,15 @@ const ProjectCard = ({
         </div>
 
         <div className="mt-auto flex flex-col gap-3">
-          {hasTechStack && <TechStackChip techStack={techStack} />}
-          <div className="flex flex-wrap gap-2">
-            {hasGitHubLink && (
-              <LinkComponent
-                href={gitHubLink}
-                icon={<SiGithub size={18} />}
-                variant="small"
-                className=""
-              >
-                GitHub
-              </LinkComponent>
-            )}
-            {hasProjectLink && (
-              <LinkComponent
-                href={projectLink}
-                icon={<ExternalLink size={18} />}
-                variant="small"
-                className=""
-              >
-                Visiter le projet
-              </LinkComponent>
-            )}
-          </div>
-          {/* <div className="flex justify-end">
-            <ProjectDetailsButton />
-          </div> */}
+          {hasTechStack && <TechBadgeList techStack={techStack} />}
+          {hasLinks && (
+            <ProjectLinks
+              githubUrl={githubUrl}
+              projectUrl={projectUrl}
+              variant="small"
+              stopPropagation
+            />
+          )}
         </div>
       </div>
     </article>

@@ -1,16 +1,15 @@
 "use client";
 
+import type { Project } from "@/data/projects";
 import { projectsData } from "@/data/projects";
 import { useState } from "react";
-import ProjectCard, { ProjectProps } from "../projects/ProjectCard";
+import ProjectCard from "../projects/ProjectCard";
 import ProjectDetails from "../projects/ProjectDetails";
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState<ProjectProps | null>(
-    null,
-  );
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const handleOpenModal = (project: ProjectProps) => {
+  const handleOpenModal = (project: Project) => {
     setSelectedProject(project);
   };
 
@@ -22,8 +21,12 @@ const Projects = () => {
     <>
       <h2 className="mb-6 text-3xl font-bold">Projets</h2>
       <div className="flex flex-col gap-6">
-        {projectsData.map((p) => (
-          <ProjectCard key={p.id} {...p} onClick={() => handleOpenModal(p)} />
+        {projectsData.map((project) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            onOpen={() => handleOpenModal(project)}
+          />
         ))}
       </div>
       {selectedProject && (

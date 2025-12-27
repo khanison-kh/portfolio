@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
@@ -7,8 +8,6 @@ import { useState } from "react";
 type ImageSliderProps = {
   images: string[];
   alt?: string;
-  width?: number;
-  height?: number;
   className?: string;
 };
 
@@ -23,7 +22,7 @@ const ImageSlider = ({ images, alt, className }: ImageSliderProps) => {
   const goTo = (i: number) => setIndex(i);
 
   return (
-    <div className={`relative ${className}`}>
+    <div className={cn("relative", className)}>
       <div className="relative aspect-video w-full overflow-hidden">
         <Image
           src={images[index]}
@@ -60,11 +59,12 @@ const ImageSlider = ({ images, alt, className }: ImageSliderProps) => {
                 type="button"
                 onClick={() => goTo(i)}
                 aria-label={`Go to image ${i + 1}`}
-                className={`h-2 w-2 cursor-pointer rounded-full transition ${
+                className={cn(
+                  "h-2 w-2 cursor-pointer rounded-full transition",
                   i === index
                     ? "bg-white"
-                    : "bg-neutral-400 hover:bg-neutral-300"
-                }`}
+                    : "bg-neutral-400 hover:bg-neutral-300",
+                )}
               />
             ))}
           </div>
