@@ -5,9 +5,9 @@ import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
 import { useEscapeKey } from "@/hooks/useEscapeKey";
 import { cn } from "@/lib/utils";
 import { X } from "lucide-react";
-import ImageSlider from "../ui/ImageSlider";
-import ProjectLinks from "../ui/ProjectLinks";
-import { TechBadgeList } from "../ui/TechBadge";
+import ImageSlider from "../../../ui/ImageSlider";
+import { TechBadgeList } from "../../../ui/TechBadge";
+import ProjectLinks from "./ProjectLinks";
 
 type ProjectDetailsProps = {
   project: Project;

@@ -1,26 +1,27 @@
 import { ChevronsDown, Mail } from "lucide-react";
 import Image from "next/image";
 import { SiGithub, SiLinkedin } from "react-icons/si";
-import LinkComponent from "../ui/LinkComponent";
-import TextAudio from "../ui/TextAudio";
+import LinkButton from "../../ui/LinkButton";
+import TextAudio from "./components/TextAudio";
 
 const Home = () => {
   return (
     <>
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-12 lg:flex-row lg:gap-16">
+      <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-between gap-8 md:gap-12 lg:max-w-6xl lg:flex-row lg:gap-16">
         {/* Intro */}
-        <div className="max-w-4xl space-y-5 text-center md:space-y-10">
-          <h1 className="text-4xl/relaxed font-medium">
+        <div className="w-full max-w-2xl space-y-8 md:space-y-10 lg:max-w-4xl">
+          <h1 className="text-3xl/relaxed font-medium sm:text-4xl/relaxed">
             <span className="block">Bonjour ! Je suis </span>
             <TextAudio
-              text="KHEEREESANTIKUL Khanison,"
+              text="KHEEREESANTIKUL Khanison"
               audioFile="name.m4a"
-              className="leading bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-5xl/tight font-bold text-transparent transition-all duration-200 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-blue-600"
+              className="bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text text-4xl/tight font-bold text-transparent transition-all duration-200 hover:from-blue-500 hover:to-blue-700 sm:text-5xl/tight"
             ></TextAudio>
-            <span className="block">développeur full stack junior.</span>
+
+            <span className="block">Développeur full stack junior</span>
           </h1>
 
-          <p className="text-xl">
+          <p className="text-lg sm:text-xl">
             Mon objectif est de créer des applications utiles et concrètes,
             capables d&apos;apporter une réelle valeur aux utilisateurs. Je
             cherche à progresser en construisant des solutions simples,
@@ -28,24 +29,24 @@ const Home = () => {
           </p>
 
           <div className="space-x-5">
-            <LinkComponent
+            <LinkButton
               href="https://www.linkedin.com/in/khanisonkh/"
               icon={<SiLinkedin size={20} />}
             >
               LinkedIn
-            </LinkComponent>
-            <LinkComponent
+            </LinkButton>
+            <LinkButton
               href="https://github.com/khanison-kh"
               icon={<SiGithub size={20} />}
             >
               GitHub
-            </LinkComponent>
-            <LinkComponent
+            </LinkButton>
+            <LinkButton
               href="mailto:khanison.kh@hotmail.com"
               icon={<Mail size={20} />}
             >
               Email
-            </LinkComponent>
+            </LinkButton>
           </div>
         </div>
 

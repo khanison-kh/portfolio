@@ -3,8 +3,8 @@
 import type { Project } from "@/data/projects";
 import { projectsData } from "@/data/projects";
 import { useState } from "react";
-import ProjectCard from "../projects/ProjectCard";
-import ProjectDetails from "../projects/ProjectDetails";
+import ProjectCard from "./components/ProjectCard";
+import ProjectDetails from "./components/ProjectDetails";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);

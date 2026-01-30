@@ -3,9 +3,9 @@
 import type { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 import { KeyboardEvent } from "react";
-import ProjectImage from "../ui/ProjectImage";
-import ProjectLinks from "../ui/ProjectLinks";
-import { TechBadgeList } from "../ui/TechBadge";
+import { TechBadgeList } from "../../../ui/TechBadge";
+import ProjectImage from "./ProjectImage";
+import ProjectLinks from "./ProjectLinks";
 
 type ProjectCardProps = {
   project: Project;

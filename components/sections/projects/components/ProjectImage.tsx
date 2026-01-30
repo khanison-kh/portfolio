@@ -21,7 +21,7 @@ const ProjectImage = ({
     return (
       <div
         className={cn(
-          "flex h-full w-full items-center justify-center bg-gradient-to-br from-blue-500 to-indigo-600 text-sm font-medium text-white",
+          "flex h-full w-full items-center justify-center bg-linear-to-br from-blue-500 to-indigo-600 text-sm font-medium text-white",
           className,
         )}
       >

@@ -1,7 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import { MouseEvent } from "react";
 import { SiGithub } from "react-icons/si";
-import LinkComponent from "./LinkComponent";
+import LinkButton from "../../../ui/LinkButton";
 
 type ProjectLinksProps = {
   githubUrl: string;
@@ -12,7 +12,6 @@ type ProjectLinksProps = {
 
 /**
  * Renders GitHub and project links.
- * Optionally stops click propagation (useful inside clickable cards).
  */
 const ProjectLinks = ({
   githubUrl,
@@ -34,22 +33,22 @@ const ProjectLinks = ({
   return (
     <div className="flex flex-wrap gap-2" onClick={handleClick}>
       {hasGithub && (
-        <LinkComponent
+        <LinkButton
           href={githubUrl}
           icon={<SiGithub size={iconSize} />}
           variant={variant}
         >
           GitHub
-        </LinkComponent>
+        </LinkButton>
       )}
       {hasProject && (
-        <LinkComponent
+        <LinkButton
           href={projectUrl}
           icon={<ExternalLink size={iconSize} />}
           variant={variant}
         >
           Visiter le projet
-        </LinkComponent>
+        </LinkButton>
       )}
     </div>
   );
