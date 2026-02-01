@@ -1,16 +1,16 @@
 import { sections } from "@/data/sections";
 import { cn } from "@/lib/utils";
-import { Sun } from "lucide-react";
+import ThemeSwitcher from "../ui/ThemeToggle";
 
 const Navbar = () => {
-  const baseLinkClasses =
-    "font-semibold rounded-lg p-3 transition duration-200";
-  const normalLinkClasses = " hover:bg-gray-200";
+  const baseClasses =
+    "font-semibold rounded-lg px-3 py-2 transition duration-200";
+  const normalLinkClasses = "hover:bg-subtle";
   const contactLinkClasses =
-    "bg-blue-600 p-3 text-white shadow-md hover:opacity-90";
+    "bg-accent-solid text-accent-fg shadow-md hover:bg-opacity-40";
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-white shadow-lg">
+    <header className="bg-surface fixed top-0 z-50 w-full shadow-lg">
       <nav className="flex items-center justify-between px-16 py-4">
         <a href="#">Khanifolio</a>
         <div className="flex items-center gap-16">
@@ -20,7 +20,7 @@ const Navbar = () => {
                 <a
                   href={`#${s.id}`}
                   className={cn(
-                    baseLinkClasses,
+                    baseClasses,
                     s.id === "contact" ? contactLinkClasses : normalLinkClasses,
                   )}
                 >
@@ -29,9 +29,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <button className="cursor-pointer rounded-full border border-gray-300 bg-gray-200 p-2 hover:bg-gray-300">
-            <Sun />
-          </button>
+          <ThemeSwitcher />
         </div>
       </nav>
     </header>

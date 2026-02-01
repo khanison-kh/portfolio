@@ -39,7 +39,7 @@ const ProjectCard = ({ project, onOpen }: ProjectCardProps) => {
       onKeyDown={handleKeyDown}
       className={cn(
         "group relative flex h-full flex-col overflow-hidden rounded-xl",
-        "border border-neutral-300 bg-white shadow-md",
+        "border-border bg-surface border shadow-md",
         "transition duration-300 hover:cursor-pointer hover:shadow-xl",
         "focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none",
         "md:flex-row",

@@ -33,21 +33,21 @@ const TimelineItem = ({ experience }: TimelineItemProps) => {
       </div>
 
       {/* Card content */}
-      <div className="grow rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
+      <div className="border-border bg-surface grow rounded-xl border p-5 shadow-sm">
         {/* Header */}
         <div className="mb-3 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h3 className="text-lg font-semibold text-neutral-900">{role}</h3>
-            <p className="font-medium text-blue-500">{company}</p>
+            <h3 className="text-fg-primary text-lg font-semibold">{role}</h3>
+            <p className="text-accent-solid font-medium">{company}</p>
           </div>
-          <div className="mt-2 flex flex-col text-neutral-500 sm:mt-0 sm:items-end">
+          <div className="text-fg-secondary mt-2 flex flex-col sm:mt-0 sm:items-end">
             <span>{date}</span>
             <span>{location}</span>
           </div>
         </div>
 
         {/* Description */}
-        <ul className="space-y-2 text-sm leading-relaxed text-neutral-800">
+        <ul className="text-fg-primary space-y-2 text-sm leading-relaxed">
           {description.map((item, index) => (
             <li key={index}>{item}</li>
           ))}

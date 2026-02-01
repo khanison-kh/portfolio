@@ -18,9 +18,13 @@ const LinkButton = ({
   className,
 }: LinkButtonProps) => {
   const baseClasses = cn(
-    "inline-flex items-center gap-2 rounded-full border border-slate-300 bg-slate-200 px-3 py-1 shadow-sm transition duration-200",
-    "hover:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500",
-    variant === "small" ? "text-xs" : "font-medium",
+    "inline-flex items-center gap-2 rounded-full px-3 py-1",
+    "border bg-surface text-fg-primary border-border",
+    "shadow-sm transition-colors duration-150",
+    "hover:bg-subtle",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--linkbtn-ring)] focus-visible:ring-offset-2",
+    "ring-offset-[var(--color-bg)]",
+    variant === "small" ? "text-xs" : "text-sm font-medium",
     className,
   );
 

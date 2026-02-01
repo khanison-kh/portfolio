@@ -1,5 +1,54 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-canvas: var(--bg-canvas);
+  --color-surface: var(--bg-surface);
+  --color-subtle: var(--bg-subtle);
+  --color-border: var(--border);
+  --color-surface-inverted: var(--bg-inverted);
+  --color-fg-primary: var(--fg-primary);
+  --color-fg-secondary: var(--fg-secondary);
+  --color-fg-inverted: var(--fg-inverted);
+  --color-accent-solid: var(--accent-solid);
+  --color-accent-fg: var(--accent-fg);
+}
+
+/* LIGHT */
+:root {
+  --bg-canvas: oklch(97% 0 0);
+  --bg-surface: oklch(98.5% 0 0);
+  --bg-subtle: oklch(92.191% 0.0001 271.152 / 0.936);
+  --bg-inverted: oklch(20.8% 0.042 265.755);
+
+  --border: oklch(87% 0 0);
+
+  --fg-primary: oklch(20.5% 0 0);
+  --fg-secondary: oklch(55.6% 0 0);
+  --fg-inverted: oklch(98.5% 0 0);
+
+  --accent-solid: oklch(62.3% 0.214 259.815);
+  --accent-fg: oklch(97% 0 0);
+}
+
+/* DARK */
+.dark {
+  --bg-canvas: oklch(12.9% 0.042 264.695);
+  --bg-surface: oklch(20.8% 0.042 265.755);
+  --bg-subtle: oklch(12.773% 0.01082 259.659 / 0.726);
+  --bg-inverted: oklch(98.5% 0 0);
+
+  --border: oklch(29.3% 0.022 261.325);
+
+  --fg-primary: oklch(98.5% 0 0);
+  --fg-secondary: oklch(70.8% 0 0);
+  --fg-inverted: oklch(1.5% 0 0);
+
+  --accent-solid: oklch(62.3% 0.214 259.815);
+  --accent-fg: oklch(97% 0 0);
+}
+
 body {
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }

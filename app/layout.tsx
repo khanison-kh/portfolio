@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "../components/layout/Footer";
@@ -19,11 +20,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const themeScript = `
+    document.documentElement.classList.toggle(
+      "dark",
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    );
+  `;
+
   return (
-    <html lang="fr" className="scroll-smooth">
+    <html lang="fr" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${inter.variable} grid min-h-dvh grid-rows-[auto_1fr_auto] bg-stone-100 text-neutral-900 antialiased`}
+        className={cn(
+          inter.variable,
+          "text-fg-primary bg-canvas grid min-h-dvh grid-rows-[auto_1fr_auto] antialiased",
+        )}
       >
+        <script
+          dangerouslySetInnerHTML={{
+            __html: themeScript,
+          }}
+        />
         <Navbar />
         <main className="flex flex-col text-lg leading-relaxed">
           {children}
