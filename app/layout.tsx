@@ -42,9 +42,7 @@ export default function RootLayout({
           }}
         />
         <Navbar />
-        <main className="flex flex-col text-lg leading-relaxed">
-          {children}
-        </main>
+        <main className="flex flex-col">{children}</main>
         <Footer />
       </body>
     </html>

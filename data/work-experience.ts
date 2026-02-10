@@ -11,6 +11,6 @@ export const workExperience: TimelineItemProps[] = [
       "Rédaction de la documentation technique et des guides utilisateurs pour faciliter la prise en main.",
     ],
     date: "juin - août 2024 (3 mois)",
-    location: "Lyon, France",
+    location: "69007 Lyon, France",
   },
 ];

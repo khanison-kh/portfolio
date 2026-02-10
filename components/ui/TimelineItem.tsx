@@ -19,7 +19,7 @@ const TimelineItem = ({
       {/* Vertical line */}
       <div className="bg-border h-full w-0.5"></div>
       {/* Dot */}
-      <div className="border-surface bg-accent-solid ring-canvas absolute top-7.5 size-2.5 rounded-full ring-4"></div>
+      <div className="border-surface bg-accent-solid ring-canvas absolute top-8 size-2.5 rounded-full ring-4"></div>
     </div>
 
     {/* Card */}
@@ -28,7 +28,9 @@ const TimelineItem = ({
       <div className="mb-6 flex justify-between">
         <div className="flex flex-col">
           <h3 className="text-xl font-semibold">{title}</h3>
-          <p className="text-accent-solid font-medium">{organization}</p>
+          <p className="text-accent-solid text-lg font-medium">
+            {organization}
+          </p>
         </div>
         <div className="text-fg-secondary flex flex-col text-right">
           <time>{date}</time>
@@ -37,7 +39,7 @@ const TimelineItem = ({
       </div>
 
       {/* Description */}
-      <ul className="list-outside list-disc space-y-2 pl-5">
+      <ul className="list-outside list-disc space-y-2 pl-5 text-base leading-relaxed">
         {description.map((item, index) => (
           <li key={index} className="pl-2">
             {item}

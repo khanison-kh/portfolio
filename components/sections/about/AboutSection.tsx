@@ -4,7 +4,7 @@ const About = () => {
   return (
     <>
       <SectionTitle title="À propos" />
-      <div className="space-y-4">
+      <div className="space-y-4 text-xl leading-relaxed">
         <p>
           Je m&apos;appelle <span title="Prénom">Khanison</span>{" "}
           <span title="Nom de famille">Kheereesantikul</span> et je suis
