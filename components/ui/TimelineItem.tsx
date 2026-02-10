@@ -1,0 +1,51 @@
+export type TimelineItemProps = {
+  id: number;
+  title: string;
+  organization: string;
+  description: string[];
+  date: string;
+  location: string;
+};
+
+const TimelineItem = ({
+  title,
+  organization,
+  description,
+  date,
+  location,
+}: TimelineItemProps) => (
+  <div className="relative pb-8 pl-8 last:pb-0">
+    <div className="absolute -left-5 flex h-full flex-col items-center">
+      {/* Vertical line */}
+      <div className="bg-border h-full w-0.5"></div>
+      {/* Dot */}
+      <div className="border-surface bg-accent-solid ring-canvas absolute top-7.5 size-2.5 rounded-full ring-4"></div>
+    </div>
+
+    {/* Card */}
+    <div className="bg-surface border-border rounded-xl border p-6 shadow-sm">
+      {/* Header */}
+      <div className="mb-6 flex justify-between">
+        <div className="flex flex-col">
+          <h3 className="text-xl font-semibold">{title}</h3>
+          <p className="text-accent-solid font-medium">{organization}</p>
+        </div>
+        <div className="text-fg-secondary flex flex-col text-right">
+          <time>{date}</time>
+          <span>{location}</span>
+        </div>
+      </div>
+
+      {/* Description */}
+      <ul className="list-outside list-disc space-y-2 pl-5">
+        {description.map((item, index) => (
+          <li key={index} className="pl-2">
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+);
+
+export default TimelineItem;

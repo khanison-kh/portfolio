@@ -1,47 +1,16 @@
-export type WorkExperience = {
-  id: number;
-  role: string;
-  company: string;
-  description: string[];
-  date: string;
-  location: string;
-};
+import { TimelineItemProps } from "@/components/ui/TimelineItem";
 
-export const workExperience: WorkExperience[] = [
+export const workExperience: TimelineItemProps[] = [
   {
     id: 97,
-    role: "Développeur Python",
-    company: "Ice Development",
+    title: "Développeur Python - (Stage)",
+    organization: "Ice Development",
     description: [
-      "Développement d'un plugin en Python pour le logiciel Blender, automatisant des workflows répétitifs pour optimiser le traitement des modèles 3D.",
+      "Développement d'un plugin en Python pour le logiciel Blender, permettant d'automatiser des tâches répétitives et d'optimiser le traitement de modèles 3D selon les besoins spécifiques de l'entreprise.",
       "Résolution de bugs et amélioration continue des performances.",
       "Rédaction de la documentation technique et des guides utilisateurs pour faciliter la prise en main.",
     ],
-    date: "Juin - Août 2024 (3 mois)",
-    location: "Lyon, France",
-  },
-  {
-    id: 98,
-    role: "Développeur Python",
-    company: "Ice Development",
-    description: [
-      "Développement d'un plugin en Python pour le logiciel Blender, automatisant des workflows répétitifs pour optimiser le traitement des modèles 3D.",
-      "Résolution de bugs et amélioration continue des performances.",
-      "Rédaction de la documentation technique et des guides utilisateurs pour faciliter la prise en main.",
-    ],
-    date: "Juin - Août 2024 (3 mois)",
-    location: "Lyon, France",
-  },
-  {
-    id: 99,
-    role: "Développeur Python",
-    company: "Ice Development",
-    description: [
-      "Développement d'un plugin en Python pour le logiciel Blender, automatisant des workflows répétitifs pour optimiser le traitement des modèles 3D.",
-      "Résolution de bugs et amélioration continue des performances.",
-      "Rédaction de la documentation technique et des guides utilisateurs pour faciliter la prise en main.",
-    ],
-    date: "Juin - Août 2024 (3 mois)",
+    date: "juin - août 2024 (3 mois)",
     location: "Lyon, France",
   },
 ];

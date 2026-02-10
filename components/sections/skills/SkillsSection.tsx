@@ -1,3 +1,4 @@
+import SectionTitle from "@/components/layout/SectionTitle";
 import {
   CATEGORY_LABELS,
   TECH,
@@ -11,7 +12,7 @@ const locale = "fr";
 const Skills = () => {
   return (
     <>
-      <h2 className="mb-8 text-3xl font-bold">Compétences</h2>
+      <SectionTitle title="Compétences techniques" />
 
       <div className="space-y-10">
         {Object.entries(TECH_CATEGORIES).map(([category, techKeys]) => (

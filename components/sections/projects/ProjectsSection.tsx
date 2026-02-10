@@ -1,5 +1,6 @@
 "use client";
 
+import SectionTitle from "@/components/layout/SectionTitle";
 import type { Project } from "@/data/projects";
 import { projectsData } from "@/data/projects";
 import { useState } from "react";
@@ -19,7 +20,7 @@ const Projects = () => {
 
   return (
     <>
-      <h2 className="mb-6 text-3xl font-bold">Projets</h2>
+      <SectionTitle title="Projets" />
       <div className="flex flex-col gap-6">
         {projectsData.map((project) => (
           <ProjectCard

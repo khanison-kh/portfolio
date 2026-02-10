@@ -4,7 +4,7 @@ import { SiGithub, SiLinkedin } from "react-icons/si";
 import LinkButton from "../../ui/LinkButton";
 import TextAudio from "./components/TextAudio";
 
-const Home = () => {
+const Hero = () => {
   return (
     <>
       <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-between gap-8 md:gap-12 lg:max-w-6xl lg:flex-row lg:gap-16">
@@ -79,4 +79,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Hero;

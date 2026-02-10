@@ -1,7 +1,9 @@
+import SectionTitle from "@/components/layout/SectionTitle";
+
 const Contact = () => {
   return (
     <>
-      <h2 className="mb-4 text-3xl font-bold">Contact</h2>
+      <SectionTitle title="Contact" />
       <p>Contact form coming soon...</p>
     </>
   );

@@ -1,7 +1,9 @@
+import SectionTitle from "@/components/layout/SectionTitle";
+
 const Education = () => {
   return (
     <>
-      <h2 className="mb-4 text-3xl font-bold">Formation</h2>
+      <SectionTitle title="Formation" />
       <p>Education content coming soon...</p>
     </>
   );

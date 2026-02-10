@@ -1,7 +1,9 @@
+import SectionTitle from "@/components/layout/SectionTitle";
+
 const About = () => {
   return (
     <>
-      <h2 className="mb-6 text-3xl font-bold">À propos</h2>
+      <SectionTitle title="À propos" />
       <div className="space-y-4">
         <p>
           Je m&apos;appelle <span title="Prénom">Khanison</span>{" "}
