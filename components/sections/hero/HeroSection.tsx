@@ -1,6 +1,7 @@
-import { ChevronsDown, Mail } from "lucide-react";
+import { ChevronsDown } from "lucide-react";
 import Image from "next/image";
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa";
+import { IoLogoGithub, IoMdMail } from "react-icons/io";
 import LinkButton from "../../ui/LinkButton";
 import TextAudio from "./components/TextAudio";
 
@@ -28,25 +29,22 @@ const Hero = () => {
             efficaces et bien structurées.
           </p>
 
-          <div className="space-x-5">
+          <div className="flex flex-row space-x-5">
             <LinkButton
               href="https://www.linkedin.com/in/khanisonkh/"
-              icon={<SiLinkedin size={20} />}
-            >
-              LinkedIn
-            </LinkButton>
+              icon={<FaLinkedinIn size={24} color="white" />}
+              className="bg-[#0a66c2]"
+            />
             <LinkButton
               href="https://github.com/khanison-kh"
-              icon={<SiGithub size={20} />}
-            >
-              GitHub
-            </LinkButton>
+              icon={<IoLogoGithub size={24} color="white" />}
+              className="bg-[#1f2429]"
+            />
             <LinkButton
               href="mailto:khanison.kh@hotmail.com"
-              icon={<Mail size={20} />}
-            >
-              Email
-            </LinkButton>
+              icon={<IoMdMail size={24} color="white" />}
+              className="bg-[#c71610]"
+            />
           </div>
         </div>
 

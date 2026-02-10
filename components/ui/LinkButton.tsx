@@ -5,26 +5,12 @@ import { ReactNode } from "react";
 type LinkButtonProps = {
   href: string;
   icon?: ReactNode;
-  variant?: "default" | "small";
-  children?: ReactNode;
   className?: string;
 };
 
-const LinkButton = ({
-  href,
-  icon,
-  variant = "default",
-  children,
-  className,
-}: LinkButtonProps) => {
-  const baseClasses = cn(
-    "inline-flex items-center gap-2 rounded-full px-3 py-1",
-    "border bg-surface text-fg-primary border-border",
-    "shadow-sm transition-colors duration-150",
-    "hover:bg-subtle",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--linkbtn-ring)] focus-visible:ring-offset-2",
-    "ring-offset-[var(--color-bg)]",
-    variant === "small" ? "text-xs" : "text-sm font-medium",
+const LinkButton = ({ href, icon, className }: LinkButtonProps) => {
+  const classes = cn(
+    "p-3 rounded-full shrink-0 hover:opacity-80 transition-all duration-200",
     className,
   );
 
@@ -32,9 +18,8 @@ const LinkButton = ({
 
   if (isMailLink) {
     return (
-      <a href={href} className={baseClasses}>
+      <a href={href} className={classes}>
         {icon}
-        {children}
       </a>
     );
   }
@@ -44,10 +29,9 @@ const LinkButton = ({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={baseClasses}
+      className={classes}
     >
       {icon}
-      {children}
     </Link>
   );
 };
