@@ -38,7 +38,7 @@ const ProjectCard = ({ project, onOpen }: ProjectCardProps) => {
       onClick={onOpen}
       onKeyDown={handleKeyDown}
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-xl",
+        "group relative flex flex-col overflow-hidden rounded-xl",
         "border-border bg-surface border shadow-md",
         "transition duration-300 hover:cursor-pointer hover:shadow-xl",
         "focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none",
