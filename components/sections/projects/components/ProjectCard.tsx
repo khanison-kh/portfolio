@@ -53,7 +53,7 @@ const ProjectCard = ({ project, onOpen }: ProjectCardProps) => {
       {/* Content */}
       <div className="flex grow flex-col gap-4 p-5">
         <div className="space-y-2">
-          <h3 className="text-xl font-semibold transition group-hover:text-blue-600">
+          <h3 className="group-hover:text-accent-solid text-xl font-semibold transition">
             {name}
           </h3>
           <p className="line-clamp-3 text-sm leading-relaxed">

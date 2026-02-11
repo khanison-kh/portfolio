@@ -35,8 +35,7 @@ export const projectsData: Project[] = [
     techStack: [TECH.NextJs, TECH.Tailwind, TECH.React, TECH.TypeScript],
     images: [],
     githubUrl: "https://github.com/khanison-kh/portfolio",
-    projectUrl:
-      "https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal",
+    projectUrl: "truc de ouf",
   },
   {
     id: "alert-monitoring-app",

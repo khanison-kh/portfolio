@@ -35,10 +35,15 @@ const Skills = () => {
 
 const TechItem = ({ techKey }: { techKey: TechKey }) => {
   const { name, icon } = TECH[techKey];
+  const shouldInvert = ["Express", "RestApis", "NextJs"].includes(techKey);
 
   return (
     <div className="flex flex-col items-center gap-2 rounded-lg p-4">
-      <img src={icon} alt={name} className="h-12 w-12" />
+      <img
+        src={icon}
+        alt={name}
+        className={`h-12 w-12 ${shouldInvert ? "dark:invert" : ""}`}
+      />
       <span className="text-center text-sm font-medium">{name}</span>
     </div>
   );

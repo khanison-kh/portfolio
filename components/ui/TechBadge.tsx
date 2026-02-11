@@ -3,7 +3,7 @@ type TechBadgeProps = {
 };
 
 export const TechBadge = ({ name }: TechBadgeProps) => (
-  <span className="bg-surface-inverted text-fg-inverted inline-flex items-center rounded-full px-2 py-1 text-xs font-semibold shadow-xl">
+  <span className="bg-accent-solid text-accent-fg inline-flex items-center rounded-full px-2 py-1 text-xs font-semibold shadow-xl">
     {name}
   </span>
 );

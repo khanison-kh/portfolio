@@ -16,7 +16,6 @@ type ProjectLinksProps = {
 const ProjectLinks = ({
   githubUrl,
   projectUrl,
-  variant = "default",
   stopPropagation = false,
 }: ProjectLinksProps) => {
   const hasGithub = Boolean(githubUrl);
@@ -28,27 +27,21 @@ const ProjectLinks = ({
     if (stopPropagation) e.stopPropagation();
   };
 
-  const iconSize = variant === "small" ? 18 : 20;
-
   return (
     <div className="flex flex-wrap gap-2" onClick={handleClick}>
       {hasGithub && (
         <LinkButton
           href={githubUrl}
-          icon={<SiGithub size={iconSize} />}
-          variant={variant}
-        >
-          GitHub
-        </LinkButton>
+          icon={<SiGithub size={18} color="white" />}
+          className="bg-[#1f2429] dark:invert"
+        />
       )}
       {hasProject && (
         <LinkButton
           href={projectUrl}
-          icon={<ExternalLink size={iconSize} />}
-          variant={variant}
-        >
-          Visiter le projet
-        </LinkButton>
+          icon={<ExternalLink size={18} color="white" />}
+          className="bg-[#1f2429] dark:invert"
+        />
       )}
     </div>
   );
