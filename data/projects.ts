@@ -33,7 +33,7 @@ export const projectsData: Project[] = [
       "Développment de mon portfolio personnel en utilisant Next.js et Tailwind CSS.",
     ],
     techStack: [TECH.NextJs, TECH.Tailwind, TECH.React, TECH.TypeScript],
-    images: [],
+    images: ["/images/projects/portfolio1.png"],
     githubUrl: "https://github.com/khanison-kh/portfolio",
     projectUrl: "truc de ouf",
   },

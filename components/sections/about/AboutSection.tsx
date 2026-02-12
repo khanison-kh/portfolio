@@ -8,16 +8,22 @@ const About = () => {
         <p>
           Je m&apos;appelle <span title="Prénom">Khanison</span>{" "}
           <span title="Nom de famille">Kheereesantikul</span> et je suis
-          développeur junior. Principalement orienté vers le développement web,
-          je reste ouvert à l&apos;exploration de différents types de projets.
-          Après une licence en mathématiques, je me suis tourné vers la
-          programmation pour mettre ma logique au service de la création
-          d&apos;applications concrètes.
+          développeur junior. Ayant commencé mes études par une licence de
+          mathématiques, je me suis définitivement orienté vers
+          l&apos;informatique après avoir obtenu le diplôme de la licence afin
+          de mettre ma logique au service de la création d&apos;applications
+          concrètes.
         </p>
         <p>
-          Je possède des bases solides en frontend avec React, Next.js et
-          Angular ainsi qu&apos;en backend avec Spring Boot et la conception
-          d&apos;API REST.
+          Principalement orienté vers le développement web, mes compétences clés
+          sont :{" "}
+          <span className="font-bold">
+            JavaScript/TypeScript, React, Angular, Java, Spring Boot.
+          </span>{" "}
+          Cependant, je reste ouvert à l&apos;exploration de différents types de
+          projets. Je possède également des bases solides avec Git et Docker. Je
+          suis constamment à la recherche de meilleures pratiques afin
+          d&apos;améliorer mes compétences et offrir des solutions de qualité.
         </p>
       </div>
     </>

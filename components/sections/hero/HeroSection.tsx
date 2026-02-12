@@ -8,9 +8,9 @@ import TextAudio from "./components/TextAudio";
 const Hero = () => {
   return (
     <>
-      <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-between gap-8 md:gap-12 lg:max-w-6xl lg:flex-row lg:gap-16">
+      <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-between gap-12 lg:max-w-6xl lg:flex-row lg:gap-16">
         {/* Intro */}
-        <div className="w-full max-w-2xl space-y-8 md:space-y-10 lg:max-w-4xl">
+        <div className="max-w-xl space-y-10 lg:max-w-3xl">
           <h1 className="text-3xl/relaxed font-medium sm:text-4xl/relaxed">
             <span className="block">Bonjour ! Je suis </span>
             <TextAudio
@@ -50,12 +50,12 @@ const Hero = () => {
 
         {/* Profile Image */}
         <Image
-          src="/images/profile.webp"
+          src="/images/profile.png"
           alt="Photo de profil"
           width={300}
           height={300}
           sizes="(max-width: 640px) 12rem, (max-width: 1024px) 14rem, (max-width: 1280px) 15rem, 18rem"
-          className="size-56 max-w-full rounded-full object-cover object-center lg:size-60 xl:size-72"
+          className="size-64 max-w-full rounded-full object-cover object-center shadow-2xl"
         />
       </div>
 
