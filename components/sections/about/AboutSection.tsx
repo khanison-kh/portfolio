@@ -10,9 +10,8 @@ const About = () => {
           <span title="Nom de famille">Kheereesantikul</span> et je suis
           développeur junior. Ayant commencé mes études par une licence de
           mathématiques, je me suis définitivement orienté vers
-          l&apos;informatique après avoir obtenu le diplôme de la licence afin
-          de mettre ma logique au service de la création d&apos;applications
-          concrètes.
+          l&apos;informatique après avoir obtenu le diplôme dans le but de créer
+          des applications concrètes.
         </p>
         <p>
           Principalement orienté vers le développement web, mes compétences clés
@@ -20,10 +19,15 @@ const About = () => {
           <span className="font-bold">
             JavaScript/TypeScript, React, Angular, Java, Spring Boot.
           </span>{" "}
-          Cependant, je reste ouvert à l&apos;exploration de différents types de
-          projets. Je possède également des bases solides avec Git et Docker. Je
-          suis constamment à la recherche de meilleures pratiques afin
-          d&apos;améliorer mes compétences et offrir des solutions de qualité.
+          Je reste cependant ouvert à l&apos;exploration de différents types de
+          projets. Je possède également des bases solides avec Git et Docker.
+        </p>
+        <p>
+          Je suis constamment dans une démarche d&apos;amélioration continue et
+          veille à appliquer au mieux les bonnes pratiques de développement pour
+          produire un code clair, structuré et maintenable. Mon objectif est de
+          concevoir des applications concrètes, utiles et performantes, qui
+          répondent aux besoins réels des utilisateurs.
         </p>
       </div>
     </>
