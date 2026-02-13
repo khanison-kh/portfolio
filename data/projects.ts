@@ -15,8 +15,9 @@ export const projectsData: Project[] = [
     id: "erp-portal",
     name: "Portail administratif (ERP)",
     description: [
-      "Application web permettant de centraliser différents services administratifs de l'IUT (gestion de l'emploi du temps, absences, notes, stage et alternance) afin de permettre un flux de travail moins fragmenté (jonglage entre plusieurs outils) pour le personnel (enseignants, secrétariat etc...) et un meilleur suivi pour les étudiants et les enseignants.",
+      "Application web permettant de centraliser différents services administratifs de l'IUT (gestion de l'emploi du temps, absences, notes, stage et alternance) afin de permettre un flux de travail moins fragmenté (éviter de jongler entre plusieurs outils) pour le personnel (enseignants, secrétariat etc...) et un meilleur suivi pour les étudiants et enseignants.",
       "Projet scolaire d'envergure impliquant une vingtaine de personnes organisées en plusieurs sous-groupes de 3 à 5 personnes.",
+      "Mon rôle était de développer le module « Gestion des stages et de l'alternance », qui comprenait la création d'une interface utilisateur pour les étudiants et les enseignants, ainsi que la mise en place d'une API REST pour gérer les données métiers (entreprises, offres de stage, candidatures, etc...).",
     ],
     techStack: [TECH.Angular, TECH.SpringBoot, TECH.MySQL],
     images: [
@@ -36,7 +37,7 @@ export const projectsData: Project[] = [
     techStack: [TECH.NextJs, TECH.Tailwind, TECH.TypeScript],
     images: ["/images/projects/portfolio1.png"],
     githubUrl: "https://github.com/khanison-kh/portfolio",
-    projectUrl: "truc de ouf",
+    projectUrl: "",
   },
   {
     id: "alert-monitoring-app",
