@@ -19,7 +19,7 @@ const Hero = () => {
               className="bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text text-4xl/tight font-bold text-transparent transition-all duration-200 hover:from-blue-500 hover:to-blue-700 sm:text-5xl/tight"
             ></TextAudio>
 
-            <span className="block">Développeur full stack junior</span>
+            <span className="block">Développeur full stack</span>
           </h1>
 
           <p className="text-lg sm:text-xl">
