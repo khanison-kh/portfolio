@@ -60,7 +60,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll down indicator */}
-      <div className="mt-auto flex justify-center pb-4">
+      <div className="mt-auto hidden justify-center pb-4 lg:flex">
         <a
           href="#about"
           className="group flex cursor-pointer flex-col items-center gap-2 transition-colors hover:text-blue-600"

@@ -9,7 +9,7 @@ export const education: TimelineItemProps[] = [
       "Parcours Réalisation d'applications.",
       "Cours principaux : Algorithmique et structure de données, Développement logiciel (Java, C, JavaScript, Angular, Spring Boot, PHP, Python), Mathématiques appliquées (probabilités, graphes), Base de données (SQL, NoSQL, modélisation), Systèmes et réseaux, Gestion de projets.",
     ],
-    date: "2023 - 2026",
+    date: "2023 - août 2026",
     location: "69100 Villeurbanne, France",
   },
   {
