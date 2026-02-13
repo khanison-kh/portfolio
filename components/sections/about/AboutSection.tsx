@@ -20,7 +20,7 @@ const About = () => {
             JavaScript/TypeScript, React, Angular, Java, Spring Boot.
           </span>{" "}
           Je reste cependant ouvert à l&apos;exploration de différents types de
-          projets. Je possède également des bases solides avec Git et Docker.
+          projets.
         </p>
         <p>
           Je suis constamment dans une démarche d&apos;amélioration continue et
