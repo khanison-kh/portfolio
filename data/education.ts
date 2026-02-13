@@ -19,6 +19,7 @@ export const education: TimelineItemProps[] = [
     description: [
       "Parcours Mathématiques appliquées.",
       "Cours principaux : Analyse, Algèbre, Probabilités, Statistiques, Informatique (Java, C++, Python).",
+      "Diplôme obtenu.",
     ],
     date: "2018 - 2022",
     location: "25000 Besançon, France",

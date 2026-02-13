@@ -56,7 +56,10 @@ const Navbar = () => {
     <header className="bg-surface fixed top-0 z-50 w-full shadow-lg">
       <nav className="flex items-center justify-between px-8 py-4">
         {/* Logo */}
-        <a href="#hero" className="text-accent-solid text-2xl font-bold">
+        <a
+          href="#hero"
+          className="text-accent-solid text-2xl font-bold transition-transform duration-300 hover:scale-110"
+        >
           Khanifolio
         </a>
 
