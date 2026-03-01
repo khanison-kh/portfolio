@@ -4,8 +4,8 @@ import { SiGithub } from "react-icons/si";
 import LinkButton from "../../../ui/LinkButton";
 
 type ProjectLinksProps = {
-  githubUrl: string;
-  projectUrl: string;
+  sourceCodeUrl: string;
+  liveProjectUrl: string;
   variant?: "default" | "small";
   stopPropagation?: boolean;
 };
@@ -14,12 +14,12 @@ type ProjectLinksProps = {
  * Renders GitHub and project links.
  */
 const ProjectLinks = ({
-  githubUrl,
-  projectUrl,
+  sourceCodeUrl,
+  liveProjectUrl,
   stopPropagation = false,
 }: ProjectLinksProps) => {
-  const hasGithub = Boolean(githubUrl);
-  const hasProject = Boolean(projectUrl);
+  const hasGithub = Boolean(sourceCodeUrl);
+  const hasProject = Boolean(liveProjectUrl);
 
   if (!hasGithub && !hasProject) return null;
 
@@ -31,14 +31,14 @@ const ProjectLinks = ({
     <div className="flex flex-wrap gap-2" onClick={handleClick}>
       {hasGithub && (
         <LinkButton
-          href={githubUrl}
+          href={sourceCodeUrl}
           icon={<SiGithub size={18} color="white" />}
           className="bg-[#1f2429] dark:invert"
         />
       )}
       {hasProject && (
         <LinkButton
-          href={projectUrl}
+          href={liveProjectUrl}
           icon={<ExternalLink size={18} color="white" />}
           className="bg-[#1f2429] dark:invert"
         />

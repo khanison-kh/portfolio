@@ -13,6 +13,9 @@
   --color-fg-inverted: var(--fg-inverted);
   --color-accent-solid: var(--accent-solid);
   --color-accent-fg: var(--accent-fg);
+  --color-linkedin: #0a66c2;
+  --color-github: #1f2429;
+  --color-mail: var(--accent-solid);
 }
 
 /* LIGHT */

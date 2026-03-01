@@ -33,17 +33,17 @@ const Hero = () => {
             <LinkButton
               href="https://www.linkedin.com/in/khanisonkh/"
               icon={<FaLinkedinIn size={24} color="white" />}
-              className="bg-[#0a66c2]"
+              className="bg-linkedin"
             />
             <LinkButton
               href="https://github.com/khanison-kh"
               icon={<IoLogoGithub size={24} color="white" />}
-              className="bg-[#1f2429]"
+              className="bg-github"
             />
             <LinkButton
               href="mailto:khanison.kh@hotmail.com"
               icon={<IoMdMail size={24} color="white" />}
-              className="bg-[#c71610]"
+              className="bg-mail"
             />
           </div>
         </div>

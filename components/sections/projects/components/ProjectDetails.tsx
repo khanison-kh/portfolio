@@ -15,13 +15,19 @@ type ProjectDetailsProps = {
 };
 
 const ProjectDetails = ({ project, onClose }: ProjectDetailsProps) => {
-  const { name, description, techStack, images, githubUrl, projectUrl } =
-    project;
+  const {
+    name,
+    description,
+    techStack,
+    images,
+    sourceCodeUrl,
+    liveProjectUrl,
+  } = project;
 
   const hasImages = images.length > 0;
   const hasDescription = description.length > 0;
   const hasTechStack = techStack.length > 0;
-  const hasLinks = Boolean(githubUrl) || Boolean(projectUrl);
+  const hasLinks = Boolean(sourceCodeUrl) || Boolean(liveProjectUrl);
 
   // Modal lifecycle hooks
   useBodyScrollLock(true);
@@ -101,7 +107,10 @@ const ProjectDetails = ({ project, onClose }: ProjectDetailsProps) => {
               <h3 className="mb-3 text-lg font-semibold text-gray-900">
                 Liens
               </h3>
-              <ProjectLinks githubUrl={githubUrl} projectUrl={projectUrl} />
+              <ProjectLinks
+                sourceCodeUrl={sourceCodeUrl}
+                liveProjectUrl={liveProjectUrl}
+              />
             </div>
           )}
         </div>

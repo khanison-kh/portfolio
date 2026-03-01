@@ -21,7 +21,7 @@ const Section = ({
     <section
       id={id}
       className={cn(
-        "flex scroll-mt-22 flex-col px-4 sm:px-6 md:px-8 lg:px-12",
+        "flex flex-col px-4 sm:px-6 md:px-8 lg:px-12",
         isHero ? "min-h-dvh pt-48" : "py-24",
         className,
       )}

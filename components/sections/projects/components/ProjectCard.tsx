@@ -13,13 +13,19 @@ type ProjectCardProps = {
 };
 
 const ProjectCard = ({ project, onOpen }: ProjectCardProps) => {
-  const { name, description, techStack, images, githubUrl, projectUrl } =
-    project;
+  const {
+    name,
+    description,
+    techStack,
+    images,
+    sourceCodeUrl,
+    liveProjectUrl,
+  } = project;
 
   const primaryDescription = description[0] ?? "";
   const hasImages = images.length > 0;
   const hasTechStack = techStack.length > 0;
-  const hasLinks = Boolean(githubUrl) || Boolean(projectUrl);
+  const hasLinks = Boolean(sourceCodeUrl) || Boolean(liveProjectUrl);
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === "Enter" || e.key === " ") {
@@ -65,8 +71,8 @@ const ProjectCard = ({ project, onOpen }: ProjectCardProps) => {
           {hasTechStack && <TechBadgeList techStack={techStack} />}
           {hasLinks && (
             <ProjectLinks
-              githubUrl={githubUrl}
-              projectUrl={projectUrl}
+              sourceCodeUrl={sourceCodeUrl}
+              liveProjectUrl={liveProjectUrl}
               variant="small"
               stopPropagation
             />
